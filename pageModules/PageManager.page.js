@@ -1,4 +1,4 @@
-import login from"../pages/login.page"
+import login from "../pageModules/login.page"
 
 export class PageManager
 {

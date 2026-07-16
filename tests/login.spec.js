@@ -1,6 +1,8 @@
-import test from "playwright/test";
+import {test,expect} from "../customeFixture/pagesFixture.js"
 
-test("test",async({pages})=>
+test("test",async({page,loginPage})=>
 {
-    console.log("hiiii")
+    await loginPage.navigate()
+    await page.waitForTimeout(5000)
+    
 })
