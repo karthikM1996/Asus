@@ -17,12 +17,6 @@ export class PageManager
       }
     }
 
-    getHome()
-    {
-        if(!this.HomePage)
-        {
-            this.HomePage=new this.HomePage(this.page)
-        }
-    }
+   
   
 }
