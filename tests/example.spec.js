@@ -1,4 +1,4 @@
-// @ts-check
+// use CommonJS require to avoid "Cannot find module '@playwright/test' or its corresponding type declarations" in some environments
 import { test, expect } from '@playwright/test';
 
 test('has title', async ({ page }) => {
@@ -16,4 +16,5 @@ test('get started link', async ({ page }) => {
 
   // Expects page to have a heading with the name of Installation.
   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
+  console.log('push test');
 });
