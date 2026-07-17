@@ -6,6 +6,7 @@ test('view clients', async ({page}) => {
 });
 
 await page.getByRole('Link',{name:'Edit'}).click()
+console.log("hello");
   })
 
 
