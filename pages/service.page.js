@@ -31,7 +31,7 @@ export class service
     }
     async editService()
     {
-        await this.editBtn.click()
+        await this.editBtn.first().click()
         //await this.updatePrice.click()
         await this.updatePrice.fill("700")
         await this.updateLink.click()
