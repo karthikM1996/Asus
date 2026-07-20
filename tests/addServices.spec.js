@@ -1,5 +1,5 @@
 import {test,expect} from "../customeFixture/pagesFixture"
-
+import data from "../testData/jsonData.json"
 
 test("addservices",async({page,pages})=>
 {
@@ -7,7 +7,8 @@ test("addservices",async({page,pages})=>
     await page.goto(process.env.HOMEPAGE_URL)
     await pages.getHomePage().servicesLink.click()
     await pages.getServicePage().clickAddServices()
-    let serviceName="ComputerService"
-    await pages.getServicePage().addService(serviceName)
+    let serviceName=data.serviceName
+    let servicePrice=data.servicePrice
+    await pages.getServicePage().addService(serviceName,servicePrice)
 
 })
