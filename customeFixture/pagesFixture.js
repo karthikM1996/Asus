@@ -16,7 +16,8 @@ export const test=base.extend({
     }; */
     await use(pageManagerObj)
   },
-  loginPage: async({page},use)=>
+  
+ /*  loginPage: async({page},use)=>
   {
     const loginPage=new login(page)
     await use(loginPage)
@@ -31,7 +32,7 @@ export const test=base.extend({
   {
     const servicePage=new service(page)
     await use(servicePage)
-  }
+  } */
   
 })
 export {expect}

@@ -18,10 +18,10 @@ export class service
     {
       await this.addServices.click()
     }
-     async addService(sername)
+     async addService(sername,serPrice)
     {
         await this.serviceName.fill(sername)
-        await this.priceOfService.fill("500")
+        await this.priceOfService.fill(serPrice)
         await this.saveBtn.click()
     }
 
