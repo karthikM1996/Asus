@@ -8,8 +8,13 @@ import {service} from "../pages/service.page"
 export const test=base.extend({
   pages: async({page},use)=>
   {
-    const pageManagerObj=new PageManager(page)
-    await use(pages)
+   const  pageManagerObj=new PageManager(page)
+   /*  const pages={ 
+     loginPage:new login(page),
+     homePage:new HomePage(page),
+     servicePage:new service(page),
+    }; */
+    await use(pageManagerObj)
   },
   loginPage: async({page},use)=>
   {
