@@ -4,15 +4,15 @@ export function getClientData(){
 
     return{
 
-        clientName:"Sunitha",
+        username:"sunitha@gmail.com",
 
         companyName:"TYSS",
 
         contactNo:`99${random}12345`,
 
-        username:`client${random}`,
+        //username:`client${random}`,
 
-        password:process.env.CLIENT_PASSWORD
+        password:process.env.PASSWORD
 
     }
 
