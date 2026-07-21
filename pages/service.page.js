@@ -6,6 +6,7 @@ export class service
     {
         this.page=page
         this.addServices=page.getByRole("link",{name:" Add Services"})
+        this.addserviceTitle=page.locator(".inner-tittle")
         this.manageServices=page.getByRole("link",{name:"Manage Services"})
         this.serviceName=page.getByPlaceholder("Service Name")
         this.priceOfService=page.getByPlaceholder("Price of Service")
@@ -32,11 +33,10 @@ export class service
     {
         await this.manageServices.click()
     }
-    async updateServicePrice()
+    async updateServicePrice(updatedPrice)
     {
         await this.editBtn.first().click()
-        //await this.updatePrice.click()
-        await this.updatePrice.fill("700")
+        await this.updatePrice.fill(updatedPrice)
         await this.updateLink.click()
     }
 
