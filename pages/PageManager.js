@@ -1,6 +1,7 @@
 import login from"../pages/login.page"
 import {HomePage} from "../pages/HomePage.page"
 import {service} from "../pages/service.page"
+import {JavascriptUtility} from "../utils/JavascriptUtility"
 
 export class PageManager
 {
@@ -10,6 +11,7 @@ export class PageManager
         this.loginPage=null
         this.homePage=null
         this.servicePage=null
+        this.javascriptUtility=null
     }
 
     getLogin()
@@ -37,6 +39,15 @@ export class PageManager
        this.servicePage=new service(this.page)
       }
       return this.servicePage
+    }
+
+     getjavascriptUtility()
+    {
+     if(!this.javascriptUtility)
+      {
+       this.javascriptUtility=new JavascriptUtility()
+      }
+      return this.javascriptUtility
     }
 
    
