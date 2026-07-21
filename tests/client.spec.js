@@ -9,6 +9,7 @@ import {ClientDashboardPage} from '../pages/cientdashboard';
 import {getClientData} from '../testData/clientdata';
 
 const client=getClientData();
+console.log(client)
 
 test('Client Login',async({page})=>{
 
