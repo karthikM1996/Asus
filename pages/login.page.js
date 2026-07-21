@@ -9,11 +9,10 @@ export class login
         //this.userName
     }
 
-    async navigate()
-    {
-        
-      await this.userName.fill("admin")
-      await this.pwd.fill("admin")
+    async navigate(userName,pwd)
+    { 
+      await this.userName.fill(userName)
+      await this.pwd.fill(pwd)
       await this.loginBtn.click()
     }
 }
