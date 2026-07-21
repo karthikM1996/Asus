@@ -1,5 +1,5 @@
 import {test,expect} from "../customeFixture/pagesFixture"
-
+import data from "../testData/jsonData.json"
 
 test("editservices",async({page,pages})=>
 {
@@ -10,7 +10,7 @@ test("editservices",async({page,pages})=>
     await page.goto(process.env.HOMEPAGE_URL)
     await homePage.servicesLink.click()
     await servicePage.clickManageServices()
-    
-    await servicePage.updateServicePrice()
+    let updatedPrice=data.updatedPrice
+    await servicePage.updateServicePrice(updatedPrice)
 
 })
