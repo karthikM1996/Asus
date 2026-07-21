@@ -13,10 +13,6 @@ import path from 'path';
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
-dotenv.config({
-   // path:`envFiles/.env.Prod`
-    path:`envfiles/.env.${process.env.TEST_ENV||"dev"}`
-  }) 
 export default defineConfig({
   testDir: './tests',
   /* Run tests in files in parallel */
@@ -29,7 +25,6 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
-  globalSetup:'./globalsetup.js',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
@@ -37,10 +32,6 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
-    storageState:'./auth.json',
-    screenshot:'only-on-failure',
-    video:'retain-on-first-failure',
-    headless:false
   },
 
   /* Configure projects for major browsers */

@@ -1,16 +1,13 @@
 import {test,expect} from "../customeFixture/pagesFixture"
-import data from "../testData/jsonData.json"
 
-test("editservices",async({page,pages})=>
+
+test("editservices",async({page,loginPage,homePage,servicePage})=>
 {
-    //await page.goto("http://49.249.29.4:8081/TestServer/Build/Client_Management_System/admin/dashboard.php")
-    const homePage=pages.getHomePage()
-    const servicePage=pages.getServicePage()
-    
-    await page.goto(process.env.HOMEPAGE_URL)
+    await  page.goto("http://49.249.29.4:8081/TestServer/Build/Client_Management_System/admin/index.php")
+    await loginPage.navigate()
     await homePage.servicesLink.click()
     await servicePage.clickManageServices()
-    let updatedPrice=data.updatedPrice
-    await servicePage.updateServicePrice(updatedPrice)
+    
+    await servicePage.editService()
 
 })

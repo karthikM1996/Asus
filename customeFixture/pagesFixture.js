@@ -8,16 +8,10 @@ import {service} from "../pages/service.page"
 export const test=base.extend({
   pages: async({page},use)=>
   {
-   const  pageManagerObj=new PageManager(page)
-   /*  const pages={ 
-     loginPage:new login(page),
-     homePage:new HomePage(page),
-     servicePage:new service(page),
-    }; */
-    await use(pageManagerObj)
+    const pageManagerObj=new PageManager(page)
+    await use(pages)
   },
-  
- /*  loginPage: async({page},use)=>
+  loginPage: async({page},use)=>
   {
     const loginPage=new login(page)
     await use(loginPage)
@@ -32,7 +26,7 @@ export const test=base.extend({
   {
     const servicePage=new service(page)
     await use(servicePage)
-  } */
+  }
   
 })
 export {expect}
