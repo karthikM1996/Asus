@@ -9,6 +9,7 @@ export class service
         this.priceOfService=page.getByPlaceholder("Price of Service")
         this.saveBtn=page.getByRole("button",{name:"Save"})
         this.editBtn=page.locator("//td[text()='ComputerService']/ancestor::tr//a")
+        this.updateName=page.locator("[name='sname']")
         this.updatePrice=page.locator("[name='price']")
         this.updateLink=page.getByRole("button",{name:"Update"})
 
@@ -29,11 +30,19 @@ export class service
     {
         await this.manageServices.click()
     }
-    async editService()
+    async updateServicePrice()
     {
         await this.editBtn.first().click()
         //await this.updatePrice.click()
         await this.updatePrice.fill("700")
+        await this.updateLink.click()
+    }
+
+    async updateServiceName(serName)
+    {
+        await this.editBtn.first().click()
+        //await this.updatePrice.click()
+        await this.updateName.fill(serName)
         await this.updateLink.click()
     }
 
