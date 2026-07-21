@@ -1,3 +1,5 @@
+import { Actions } from "../utils/Actions"
+
 export class service
 {
     constructor(page)
@@ -21,9 +23,9 @@ export class service
     }
      async addService(sername,serPrice)
     {
-        await this.serviceName.fill(sername)
-        await this.priceOfService.fill(serPrice)
-        await this.saveBtn.click()
+        await Actions.fillInput(this.serviceName,sername)
+        await Actions.fillInput(this.priceOfService,serPrice)
+        await Actions.clickOn(this.saveBtn)
     }
 
     async clickManageServices()
