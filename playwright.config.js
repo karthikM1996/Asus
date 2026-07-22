@@ -35,6 +35,7 @@ export default defineConfig({
     storageState:'./auth.json',
     screenshot:'only-on-failure',
     video:'retain-on-first-failure',
+    headless:false,
   },
 
   /* Configure projects for major browsers */
