@@ -9,6 +9,8 @@ export class ClientLoginPage {
 
     async login(username, password) {
         await this.page.goto('http://49.249.29.4:8081/TestServer/Build/Client_Management_System/client/index.php');
+        console.log(username)
+        console.log(password)
 
         await this.username.fill(username);
         await this.password.fill(password);
