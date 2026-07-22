@@ -15,12 +15,11 @@ export class service
         this.updateName=page.locator("[name='sname']")
         this.updatePrice=page.locator("[name='price']")
         this.updateLink=page.getByRole("button",{name:"Update"})
-
     }
 
     async clickAddServices()
     {
-      await this.addServices.click()
+      await Actions.clickOn(this.addServices)
     }
      async addService(sername,serPrice)
     {
@@ -28,25 +27,24 @@ export class service
         await Actions.fillInput(this.priceOfService,serPrice)
         await Actions.clickOn(this.saveBtn)
     }
-
+    
     async clickManageServices()
     {
-        await this.manageServices.click()
+        await Actions.clickOn(this.manageServices)
     }
+
     async updateServicePrice(updatedPrice)
     {
-        await this.editBtn.first().click()
-        await this.updatePrice.fill(updatedPrice)
-        await this.updateLink.click()
+        await Actions.fillInput(this.editBtn.first())
+        await Actions.fillInput(this.updatePrice,updatedPrice)
+        await Actions.fillInput(this.updateLink)
     }
 
     async updateServiceName(serName)
     {
-        await this.editBtn.first().click()
-        //await this.updatePrice.click()
-        await this.updateName.fill(serName)
-        await this.updateLink.click()
+        await Actions.clickOn(this.editBtn.first())
+        await Actions.fillInput(this.updateName,serName)
+        await Actions(this.updateLink)
     }
-
    
 }
