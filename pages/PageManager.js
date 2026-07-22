@@ -40,6 +40,16 @@ export class PageManager
       }
       return this.servicePage
     }
+
+     getjavascriptUtility()
+    {
+     if(!this.javascriptUtility)
+      {
+       this.javascriptUtility=JavascriptUtility
+      }
+      return this.javascriptUtility
+    }
+
    
   
 }
